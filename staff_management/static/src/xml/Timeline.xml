@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates xml:space="preserve">
+
+<t t-name="staff_timeline_buttons">
+	<div class="stimeline_header">
+
+		<table class="fc-header" style="width:100%">
+				<tbody>
+					<tr>
+						<td class="fc-header-left">
+							<span class="fc-button fc-button-prev-month fc-state-default fc-corner-left" unselectable="on">
+								<span class="fc-text-arrow">«</span> Month
+							</span><span class="fc-button fc-button-prev-week fc-state-default" unselectable="on">
+								<span class="fc-text-arrow">‹</span> Week
+							</span><span class="fc-button fc-button-today fc-state-default fc-state-disabled" unselectable="on">
+								Aujourd'hui
+							</span><span class="fc-button fc-button-next-week fc-state-default" unselectable="on">
+								Week <span class="fc-text-arrow">›</span>
+							</span><span class="fc-button fc-button-next-month fc-state-default fc-corner-right" unselectable="on">
+								Month <span class="fc-text-arrow">»</span>
+							</span>
+						</td>
+						<!-- <td class="fc-header-center">
+							<span class="fc-header-title">
+								<h2></h2>
+							</span>
+						</td> -->
+						<td class="fc-header-right">
+							<span class="fc-export-buttons">
+								<span class="fc-button fc-state-default fc-corner-left fc-button-export-pdf-today" unselectable="on">
+									PDF Today
+								</span><span class="fc-button fc-state-default fc-corner-right fc-button-export-print-today" unselectable="on">
+									Print Today
+								</span>
+								<span class="fc-button fc-state-default fc-corner-left fc-button-export-pdf" style="margin-left: 10px;" unselectable="on">
+									PDF
+								</span><span class="fc-button fc-state-default fc-corner-right fc-button-export-print" unselectable="on">
+									Print
+								</span>
+							</span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="quick_create_bar">
+			
+			</div>
+		</div>
+		
+        <!--  <div class="o_calendar_buttons">
+            <t t-if="!isMobile">
+                <button class="o_calendar_button_prev btn btn-primary" aria-label="Previous" title="Previous"><span class="fa fa-arrow-left"/></button>
+                <button class="o_calendar_button_today btn btn-primary">Today</button>
+                <button class="o_calendar_button_next btn btn-primary" aria-label="Next" title="Next"><span class="fa fa-arrow-right"/></button>
+            </t>
+            <div class="btn-group">
+                <button type="button" class="o_calendar_button_day btn btn-secondary">Day</button>
+                <button type="button" class="o_calendar_button_week btn btn-secondary">Week</button>
+                <button type="button" class="o_calendar_button_month btn btn-secondary">Month</button>
+            </div>
+        </div> -->
+    </t>
+    
+<t t-name="staff_timeline_quick_create">
+	<div>
+		<table class="quick_create_table">
+			<tr>
+				<td id="quickAssignTd">
+					<input type="checkbox" class="quickassignCheckbox" id="quickassignInput"/>
+					<label for="quickassignInput">Quick assign</label>
+				</td>
+				<td>
+					<label for="task_id" class="qa_hide o_hidden">Task</label>
+				</td>
+				<td>
+					<span id="task_id" class="qa_hide task_id o_hidden"/>
+				</td>
+				<td>
+					<label class="qa_hide o_hidden" for="start_hourInput">Start Hour</label>
+				</td>
+				<td>
+				    <div class="qa_hide o_hidden start_hour"></div>
+					<!-- <input type="text" class="start_hour qa_hide o_hidden" id="start_hourInput" -->
+				</td>
+				<td>
+					<label class="qa_hide o_hidden" for="start_hourInput">End Hour</label>
+				</td>
+				<td>
+				    <div class="qa_hide o_hidden end_hour"></div>
+					<!--  input type="text" class="end_hour qa_hide o_hidden" id="end_hourInput" -->
+				</td>
+			</tr>
+		</table>
+	</div>
+</t>
+
+<t t-name="staff_timeline_quick_create_timecheck">
+	<div>
+		<table>
+			<tr>
+				<td id="quickAssignTd">
+					<input type="checkbox" class="quickassignCheckbox" id="quickassignInput"/>
+					<label for="quickassignInput">Quick assign</label>
+				</td>
+				<td>
+					<label class="qa_hide o_hidden" for="work_hourInput">Worked time</label>
+				</td>
+				<td class="qa_hide">
+					<input type="text" class="work_hour qa_hide o_hidden" id="work_hourInput"/>
+				</td>
+			</tr>
+		</table>
+	</div>
+</t>
+
+<t t-name="staff_timeline">
+	
+	<div class="staff_timeline fc fc-ltr o_calendar_view">
+		<div class="stimeline_table">
+		</div>
+		<div class="staff_tooltip">
+			<div class="staff_tooltip_content"></div>
+			<div class="staff_tooltip_arrow">
+				<div class="border"></div>
+				<div class="background"></div>
+			</div>
+		</div>
+		<div class="staff_tooltip_left">
+			<div class="staff_tooltip_left_arrow">
+				<div class="border"></div>
+				<div class="background"></div>
+			</div>
+			<div class="staff_tooltip_left_content"></div>
+		</div>
+	
+	</div>
+</t>
+</templates>
