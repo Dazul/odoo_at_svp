@@ -3,8 +3,8 @@ access_perso_schedule,staff.scheduler,model_staff_scheduler,group_staff_manageme
 access_general_schedule,staff.scheduler,model_staff_scheduler,group_staff_management_user,1,0,0,0
 access_plannification,staff.scheduler,model_staff_scheduler,group_staff_management_planner,1,1,1,1
 access_time_check,staff.scheduler,model_staff_scheduler,group_staff_management_in_charge_time,1,1,1,1
-access_authorization,staff.authorization,model_staff_authorization,group_staff_management_trainer,1,1,1,1
-access_authorization,staff.authorization,model_staff_authorization,group_staff_management_user,1,0,0,0
+access_authorization_trainer,staff.authorization.trainer,model_staff_authorization,group_staff_management_trainer,1,1,1,1
+access_authorization_user,staff.authorization.user,model_staff_authorization,group_staff_management_user,1,0,0,0
 access_comments,staff.comments,model_staff_comments,group_staff_management_trainer,1,1,1,1
 access_tasks_trainer,account.analytic.account,model_account_analytic_account,group_staff_management_trainer,1,0,0,0
 access_tasks_planner,account.analytic.account,model_account_analytic_account,group_staff_management_planner,1,0,0,0

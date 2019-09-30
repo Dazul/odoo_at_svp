@@ -14,8 +14,8 @@
 	"init_xml" : [],
 	"demo_xml" : [],
 	"data" : [
-		'security/ir.model.access.csv',
 		'security/staff_management_security.xml',
+		'security/ir.model.access.csv',
 		'views/staff_management_views.xml',
 		'views/staff_tasks_accounts.xml',
 		'views/staff_comment_type.xml',
