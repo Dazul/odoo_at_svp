@@ -66,10 +66,10 @@ var PersonalScheduleController = CalendarController.extend({
 		
 		self.model.deleteRecords([eventData.id], self.modelName).then(function() {
 			self.reload();
-//			self.renderer.$calendar.fullCalendar('removeEvents', eventData.id);
-//			var strDate = moment(eventData.start, 'DD.MM.YYYY').format('YYYY-MM-DD');
-//			self.renderer.$calendar.fullCalendar('unselect');
-//			self.renderer.$calendar.find('.fc-day[data-date|="'+strDate+'"]').removeClass('staff_available');
+			self.renderer.$calendar.fullCalendar('removeEvents', eventData.id);
+			var strDate = moment(eventData.start, 'DD.MM.YYYY').format('YYYY-MM-DD');
+			self.renderer.$calendar.fullCalendar('unselect');
+			self.renderer.$calendar.find('.fc-day[data-date|="'+strDate+'"]').removeClass('staff_available');
 		}).fail(function(r, event) {				
 			if(self.quick_create_error){
 				event.preventDefault(); // don't show multiple warning messages
