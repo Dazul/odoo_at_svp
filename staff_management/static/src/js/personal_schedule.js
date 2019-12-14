@@ -133,10 +133,10 @@ var PersonalScheduleRenderer = MyCalendarRenderer.extend({
 	toggle_availability: function(date){
 		
 		var self = this;
-	    var eventg = {};
+	    	var eventg = {};
 		var isAlreadyAnEvent = false;
 		var eventData = {};
-		var emptyEvent = True
+		var emptyEvent = true
 		this.$calendar.fullCalendar('clientEvents', function(event) {
 			if(emptyEvent){
 				var d1 = moment(event.start, 'DD.MM.YYYY').format('YYYY-MM-DD');
@@ -146,7 +146,7 @@ var PersonalScheduleRenderer = MyCalendarRenderer.extend({
 					isAlreadyAnEvent = true;
 					eventData = event.record;			
 				}
-				emptyEvent = False;
+				emptyEvent = false;
 			}
 		});
 		
