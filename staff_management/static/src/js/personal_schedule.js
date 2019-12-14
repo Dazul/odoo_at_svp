@@ -136,14 +136,17 @@ var PersonalScheduleRenderer = MyCalendarRenderer.extend({
 	    var eventg = {};
 		var isAlreadyAnEvent = false;
 		var eventData = {};
+		var emptyEvent = True
 		this.$calendar.fullCalendar('clientEvents', function(event) {
-			var d1 = moment(event.start, 'DD.MM.YYYY').format('YYYY-MM-DD');
-			var d2 =  moment(date, 'DD.MM.YYYY').format('YYYY-MM-DD');
-			eventg = event;
-			if(d1 == d2){
-				isAlreadyAnEvent = true;
-				eventData = event.record;
-				
+			if(emptyEvent){
+				var d1 = moment(event.start, 'DD.MM.YYYY').format('YYYY-MM-DD');
+				var d2 =  moment(date, 'DD.MM.YYYY').format('YYYY-MM-DD');
+				eventg = event;
+				if(d1 == d2){
+					isAlreadyAnEvent = true;
+					eventData = event.record;			
+				}
+				emptyEvent = False;
 			}
 		});
 		
