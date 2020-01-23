@@ -66,10 +66,10 @@ var PersonalScheduleController = CalendarController.extend({
 		
 		self.model.deleteRecords([eventData.id], self.modelName).then(function() {
 			self.reload();
-//			self.renderer.$calendar.fullCalendar('removeEvents', eventData.id);
-//			var strDate = moment(eventData.start, 'DD.MM.YYYY').format('YYYY-MM-DD');
-//			self.renderer.$calendar.fullCalendar('unselect');
-//			self.renderer.$calendar.find('.fc-day[data-date|="'+strDate+'"]').removeClass('staff_available');
+			self.renderer.$calendar.fullCalendar('removeEvents', eventData.id);
+			var strDate = moment(eventData.start, 'DD.MM.YYYY').format('YYYY-MM-DD');
+			self.renderer.$calendar.fullCalendar('unselect');
+			self.renderer.$calendar.find('.fc-day[data-date|="'+strDate+'"]').removeClass('staff_available');
 		}).fail(function(r, event) {				
 			if(self.quick_create_error){
 				event.preventDefault(); // don't show multiple warning messages
@@ -133,17 +133,20 @@ var PersonalScheduleRenderer = MyCalendarRenderer.extend({
 	toggle_availability: function(date){
 		
 		var self = this;
-	    var eventg = {};
+	    	var eventg = {};
 		var isAlreadyAnEvent = false;
 		var eventData = {};
+		var emptyEvent = true
 		this.$calendar.fullCalendar('clientEvents', function(event) {
 			var d1 = moment(event.start, 'DD.MM.YYYY').format('YYYY-MM-DD');
 			var d2 =  moment(date, 'DD.MM.YYYY').format('YYYY-MM-DD');
-			eventg = event;
 			if(d1 == d2){
-				isAlreadyAnEvent = true;
-				eventData = event.record;
-				
+				if(emptyEvent){
+					eventData = event.record;
+					eventg = event;
+					emptyEvent = false;
+				}
+				isAlreadyAnEvent = true;		
 			}
 		});
 		
