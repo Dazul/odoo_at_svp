@@ -112,7 +112,7 @@ var PersonalScheduleRenderer = MyCalendarRenderer.extend({
 	},
 	
 	toggle_replacement: function(event){
-		event.record.replaceable = !event.record.replaceable;
+		event.replaceable = !event.replaceable;
 		this.trigger_up('updateRecord', event);
 		
 	},
