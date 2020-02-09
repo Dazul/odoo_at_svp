@@ -152,7 +152,7 @@ var PersonalScheduleRenderer = MyCalendarRenderer.extend({
 		
 		if(isAlreadyAnEvent){
 			if(eventData.task_id){
-				this.toggle_replacement(eventData);
+				this.toggle_replacement(eventg);
 				return;
 			}
 			this.trigger_up("removeAvailability", eventg);
