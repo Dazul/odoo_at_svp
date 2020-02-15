@@ -40,7 +40,6 @@ class staff_scheduler(models.Model):
     @api.multi
     def write(self, vals):
         context = dict(self.env.context)
-        raise UserError(str(self.env.context))
         if context:
             # If write_worked_time on context,
             # write the wirked time on te timesheet
@@ -89,6 +88,7 @@ class staff_scheduler(models.Model):
                 break_length = breaks[0].break_time
                 time = time - break_length
             vals['work_time'] = time
+        raise UserError(str(self.env.context) + str(vals))
         return super(staff_scheduler, self.with_context(context)).write(vals)
 
     # push the time worked into timesheet
