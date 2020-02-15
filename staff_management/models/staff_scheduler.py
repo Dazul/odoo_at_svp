@@ -39,7 +39,7 @@ class staff_scheduler(models.Model):
     # Make a control to ensure that the user can do the task.
     @api.multi
     def write(self, vals):
-        raise UseError(str(vals))
+        raise UserError(str(vals))
         context = dict(self.env.context)
         if context:
             # If write_worked_time on context,
