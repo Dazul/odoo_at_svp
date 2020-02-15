@@ -88,7 +88,7 @@ class staff_scheduler(models.Model):
                 break_length = breaks[0].break_time
                 time = time - break_length
             vals['work_time'] = time
-        if 'from_ui' in context.keys and vals.keys.len == 1:
+        if 'from_ui' in context.keys() and vals.keys().len == 1:
             vals['replaceable'] = context['from_ui']
         return super(staff_scheduler, self.with_context(context)).write(vals)
 
