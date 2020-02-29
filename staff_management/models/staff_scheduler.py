@@ -89,7 +89,6 @@ class staff_scheduler(models.Model):
                 break_length = breaks[0].break_time
                 time = time - break_length
             vals['work_time'] = time
-        raise UserError(str(context) + str(vals))
         return super(staff_scheduler, self.with_context(context)).write(vals)
 
     # push the time worked into timesheet
