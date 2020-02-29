@@ -40,7 +40,7 @@ class staff_scheduler(models.Model):
     @api.multi
     def write(self, vals):
         context = dict(self.env.context)
-        raise UserError(str(dir(self.env)) + "\n" + str(vals))
+        raise UserError(str(self.env.context) + "\n" + str(vals))
         if context:
             # If write_worked_time on context,
             # write the wirked time on te timesheet
